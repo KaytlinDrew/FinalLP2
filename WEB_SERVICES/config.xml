@@ -1,0 +1,5 @@
+<pucp.gamesoft.rrhh.controller.config.ConnectionParameters>
+    <url>jdbc:mysql://sallka.lab.inf.pucp.edu.pe:3306/a20160026?autoReconnect=true&amp;useSSL=false</url>
+    <user>a20160026</user>
+    <password>6HuaQv</password>
+</pucp.gamesoft.rrhh.controller.config.ConnectionParameters>

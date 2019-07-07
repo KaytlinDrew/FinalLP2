@@ -1,0 +1,6 @@
+<pucp.gamesoft.rrhh.controller.config.ConnectionParameters>
+    <!--jdbc:mysql://127.0.0.1/lp2-->
+    <url>jdbc:mysql://sallka.lab.inf.pucp.edu.pe:3306/a20161781?serverTimezone=UTC</url>
+    <user>a20161781</user>
+    <password>C13EuC</password>
+</pucp.gamesoft.rrhh.controller.config.ConnectionParameters>
