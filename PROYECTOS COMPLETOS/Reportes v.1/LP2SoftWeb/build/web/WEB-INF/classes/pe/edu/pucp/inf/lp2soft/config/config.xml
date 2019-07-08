@@ -1,0 +1,5 @@
+<pe.edu.pucp.inf.lp2soft.controller.config.ConnectionParameters>
+    <url>jdbc:mysql://sallka.lab.inf.pucp.edu.pe:3306/inf2820781?autoReconnect=true&amp;useSSL=false</url>
+    <user>inf2820781</user>
+    <password>Ni6TyI</password>
+</pe.edu.pucp.inf.lp2soft.controller.config.ConnectionParameters>

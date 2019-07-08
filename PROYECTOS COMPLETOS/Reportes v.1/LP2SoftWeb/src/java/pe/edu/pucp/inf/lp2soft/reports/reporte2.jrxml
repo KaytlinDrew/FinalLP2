@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="503" pageHeight="314" columnWidth="463" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="72083804-0f7c-43fa-a36f-56045eb892f4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT CASE WHEN GENRE ='F' THEN 'FEMENINO' 
+WHEN GENRE = 'M' THEN 'MASCULINO' 
+END AS GENRE, COUNT(*) AS CANTIDAD, 
+CAREER.NAME FROM STUDENT INNER 
+JOIN PERSON ON PERSON.ID_PERSON = STUDENT.ID_STUDENT INNER JOIN CAREER ON CAREER.ID_CAREER = STUDENT.FID_CAREER 
+GROUP BY GENRE, FID_CAREER]]>
+	</queryString>
+	<field name="GENRE" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.Long"/>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20">
+			<staticText>
+				<reportElement x="2" y="0" width="485" height="20" uuid="2f4d38e6-615d-46d0-bd7b-53b8db825882"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ALUMNOS (HOMBRES Y MUJERES) POR CARRERA:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="254">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="2" y="0" width="461" height="254" uuid="37356cd5-cdc7-47a0-a9c5-3a10bb4b6aaa"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{NAME}
+]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{GENRE}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{CANTIDAD}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</pageFooter>
+</jasperReport>
